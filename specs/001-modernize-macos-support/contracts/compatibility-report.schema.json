@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:iterm2-finder-tools:compatibility-report",
+  "title": "iTerm2 Finder Tools Compatibility Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sourceVersion", "sourceRevision", "generatedAt", "configurations"],
+  "properties": {
+    "sourceVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "sourceRevision": {
+      "type": "string",
+      "minLength": 7
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "configurations": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/configuration" }
+    }
+  },
+  "$defs": {
+    "result": {
+      "enum": ["pass", "fail", "unverified"]
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "macOSVersion",
+        "architecture",
+        "iTermVersion",
+        "buildOrigin",
+        "signingMode",
+        "xcodeVersion",
+        "supportStatus",
+        "runtimeCases",
+        "serviceSelectionCases",
+        "environmentChecks"
+      ],
+      "properties": {
+        "macOSVersion": { "type": "string", "minLength": 1 },
+        "architecture": { "const": "arm64" },
+        "iTermVersion": { "type": "string", "minLength": 1 },
+        "buildOrigin": { "const": "source-local-build" },
+        "signingMode": { "const": "ad-hoc-local" },
+        "xcodeVersion": { "type": "string", "minLength": 1 },
+        "supportStatus": { "enum": ["supported", "provisional", "unverified"] },
+        "runtimeCases": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/runtimeCase" }
+        },
+        "serviceSelectionCases": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/serviceSelectionCase" }
+        },
+        "environmentChecks": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/environmentCheck" }
+        }
+      }
+    },
+    "runtimeCase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entryPoint", "iTermLifecycle", "pathCategory", "result", "evidence"],
+      "properties": {
+        "entryPoint": { "enum": ["toolbar", "service"] },
+        "iTermLifecycle": { "enum": ["stopped", "windowAvailable", "noUsableWindow"] },
+        "pathCategory": { "type": "string", "minLength": 1 },
+        "result": { "$ref": "#/$defs/result" },
+        "durationMilliseconds": { "type": "integer", "minimum": 0 },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "notes": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "result": { "enum": ["pass", "fail"] } },
+            "required": ["result"]
+          },
+          "then": { "required": ["durationMilliseconds"] }
+        }
+      ]
+    },
+    "serviceSelectionCase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selectionCategory", "result", "evidence"],
+      "properties": {
+        "selectionCategory": {
+          "enum": [
+            "oneFolder",
+            "regularFile",
+            "empty",
+            "multipleFolders",
+            "mixedSelection",
+            "aliasToFolder",
+            "aliasToFile",
+            "unresolvedAlias"
+          ]
+        },
+        "result": { "$ref": "#/$defs/result" },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "notes": { "type": "string" }
+      }
+    },
+    "environmentCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category", "result", "evidence"],
+      "properties": {
+        "category": {
+          "enum": [
+            "build",
+            "arm64Artifact",
+            "adHocSignature",
+            "install",
+            "toolbarRegistration",
+            "serviceRegistration",
+            "automationAllowed",
+            "automationDenied",
+            "removal"
+          ]
+        },
+        "result": { "$ref": "#/$defs/result" },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

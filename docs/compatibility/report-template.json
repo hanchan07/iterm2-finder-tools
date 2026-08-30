@@ -1,0 +1,39 @@
+{
+  "sourceVersion": "0.0.0",
+  "sourceRevision": "unversioned",
+  "generatedAt": "2026-08-29T00:00:00Z",
+  "configurations": [
+    {
+      "macOSVersion": "unverified",
+      "architecture": "arm64",
+      "iTermVersion": "unverified",
+      "buildOrigin": "source-local-build",
+      "signingMode": "ad-hoc-local",
+      "xcodeVersion": "unverified",
+      "supportStatus": "unverified",
+      "runtimeCases": [
+        {
+          "entryPoint": "toolbar",
+          "iTermLifecycle": "stopped",
+          "pathCategory": "template",
+          "result": "unverified",
+          "evidence": ["docs/compatibility/report-template.json"]
+        }
+      ],
+      "serviceSelectionCases": [
+        {
+          "selectionCategory": "oneFolder",
+          "result": "unverified",
+          "evidence": ["docs/compatibility/report-template.json"]
+        }
+      ],
+      "environmentChecks": [
+        {
+          "category": "build",
+          "result": "unverified",
+          "evidence": ["docs/compatibility/report-template.json"]
+        }
+      ]
+    }
+  ]
+}

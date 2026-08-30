@@ -1,0 +1,100 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000011 /* AppDelegate.swift */; };
+		A10000000000000000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000012 /* Assets.xcassets */; };
+		A10000000000000000000004 /* ITermLaunchContractTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000018 /* ITermLaunchContractTests.swift */; };
+		A10000000000000000000009 /* ITermApplicationLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000025 /* ITermApplicationLocator.swift */; };
+		A1000000000000000000000A /* ITermLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000026 /* ITermLauncher.swift */; };
+		A1000000000000000000000B /* FinderLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000028 /* FinderLocationProvider.swift */; };
+		A1000000000000000000000C /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000029 /* ServiceProvider.swift */; };
+		A1000000000000000000000D /* FinderScriptingBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000002A /* FinderScriptingBridge.m */; };
+		A1000000000000000000000E /* OpenITermMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000002B /* OpenITermMain.swift */; };
+		A1000000000000000000000F /* OpenITermCore in Frameworks */ = {isa = PBXBuildFile; productRef = A100000000000000000000D1 /* OpenITermCore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A10000000000000000000011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A10000000000000000000012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A10000000000000000000014 /* Open iTerm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Open iTerm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000015 /* OpenITermTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenITermTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10000000000000000000017 /* OpenITerm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenITerm.entitlements; sourceTree = "<group>"; };
+		A10000000000000000000018 /* ITermLaunchContractTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITermLaunchContractTests.swift; sourceTree = "<group>"; };
+		A10000000000000000000021 /* LaunchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRequest.swift; sourceTree = "<group>"; };
+		A10000000000000000000022 /* DirectoryTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTarget.swift; sourceTree = "<group>"; };
+		A10000000000000000000023 /* LaunchOutcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchOutcome.swift; sourceTree = "<group>"; };
+		A10000000000000000000024 /* DirectoryTargetResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTargetResolver.swift; sourceTree = "<group>"; };
+		A10000000000000000000025 /* ITermApplicationLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITermApplicationLocator.swift; sourceTree = "<group>"; };
+		A10000000000000000000026 /* ITermLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITermLauncher.swift; sourceTree = "<group>"; };
+		A10000000000000000000027 /* FinderScriptingBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinderScriptingBridge.h; sourceTree = "<group>"; };
+		A10000000000000000000028 /* FinderLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLocationProvider.swift; sourceTree = "<group>"; };
+		A10000000000000000000029 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		A1000000000000000000002A /* FinderScriptingBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinderScriptingBridge.m; sourceTree = "<group>"; };
+		A1000000000000000000002B /* OpenITermMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenITermMain.swift; sourceTree = "<group>"; };
+		A1000000000000000000002C /* SingleInvocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleInvocationCoordinator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A10000000000000000000031 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (A1000000000000000000000F /* OpenITermCore in Frameworks */); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000032 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A10000000000000000000041 = {isa = PBXGroup; children = (A10000000000000000000042 /* OpenITerm */, A10000000000000000000043 /* OpenITermTests */, A10000000000000000000044 /* Products */); sourceTree = "<group>"; };
+		A10000000000000000000042 /* OpenITerm */ = {isa = PBXGroup; children = (A1000000000000000000002B /* OpenITermMain.swift */, A10000000000000000000011 /* AppDelegate.swift */, A10000000000000000000046 /* Core */, A10000000000000000000047 /* Integrations */, A10000000000000000000045 /* Resources */); path = OpenITerm; sourceTree = "<group>"; };
+		A10000000000000000000043 /* OpenITermTests */ = {isa = PBXGroup; children = (A10000000000000000000018 /* ITermLaunchContractTests.swift */); path = OpenITermTests; sourceTree = "<group>"; };
+		A10000000000000000000044 /* Products */ = {isa = PBXGroup; children = (A10000000000000000000014 /* Open iTerm.app */, A10000000000000000000015 /* OpenITermTests.xctest */); name = Products; sourceTree = "<group>"; };
+		A10000000000000000000045 /* Resources */ = {isa = PBXGroup; children = (A10000000000000000000012 /* Assets.xcassets */, A10000000000000000000016 /* Info.plist */, A10000000000000000000017 /* OpenITerm.entitlements */); path = Resources; sourceTree = "<group>"; };
+		A10000000000000000000046 /* Core */ = {isa = PBXGroup; children = (A10000000000000000000021 /* LaunchRequest.swift */, A10000000000000000000022 /* DirectoryTarget.swift */, A10000000000000000000023 /* LaunchOutcome.swift */, A10000000000000000000024 /* DirectoryTargetResolver.swift */, A1000000000000000000002C /* SingleInvocationCoordinator.swift */); path = Core; sourceTree = "<group>"; };
+		A10000000000000000000047 /* Integrations */ = {isa = PBXGroup; children = (A10000000000000000000025 /* ITermApplicationLocator.swift */, A10000000000000000000026 /* ITermLauncher.swift */, A10000000000000000000027 /* FinderScriptingBridge.h */, A1000000000000000000002A /* FinderScriptingBridge.m */, A10000000000000000000028 /* FinderLocationProvider.swift */, A10000000000000000000029 /* ServiceProvider.swift */); path = Integrations; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A10000000000000000000051 /* Open iTerm */ = {isa = PBXNativeTarget; buildConfigurationList = A10000000000000000000061 /* Build configuration list for PBXNativeTarget "Open iTerm" */; buildPhases = (A10000000000000000000071 /* Sources */, A10000000000000000000031 /* Frameworks */, A10000000000000000000072 /* Resources */); buildRules = (); dependencies = (); name = "Open iTerm"; packageProductDependencies = (A100000000000000000000D1 /* OpenITermCore */); productName = "Open iTerm"; productReference = A10000000000000000000014 /* Open iTerm.app */; productType = "com.apple.product-type.application"; };
+		A10000000000000000000052 /* OpenITermTests */ = {isa = PBXNativeTarget; buildConfigurationList = A10000000000000000000062 /* Build configuration list for PBXNativeTarget "OpenITermTests" */; buildPhases = (A10000000000000000000073 /* Sources */, A10000000000000000000032 /* Frameworks */); buildRules = (); dependencies = (); name = OpenITermTests; productName = OpenITermTests; productReference = A10000000000000000000015 /* OpenITermTests.xctest */; productType = "com.apple.product-type.bundle.unit-test"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A10000000000000000000081 /* Project object */ = {isa = PBXProject; attributes = { BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 2600; LastUpgradeCheck = 2600; TargetAttributes = { A10000000000000000000051 = { CreatedOnToolsVersion = 26.6; }; A10000000000000000000052 = { CreatedOnToolsVersion = 26.6; }; }; }; buildConfigurationList = A10000000000000000000063 /* Build configuration list for PBXProject "OpenITerm" */; compatibilityVersion = "Xcode 16.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = A10000000000000000000041; packageReferences = (A100000000000000000000D0 /* XCLocalSwiftPackageReference "." */); productRefGroup = A10000000000000000000044 /* Products */; projectDirPath = ""; projectRoot = ""; targets = (A10000000000000000000051 /* Open iTerm */, A10000000000000000000052 /* OpenITermTests */); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A10000000000000000000072 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000002 /* Assets.xcassets in Resources */); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A10000000000000000000071 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A1000000000000000000000E /* OpenITermMain.swift in Sources */, A10000000000000000000001 /* AppDelegate.swift in Sources */, A10000000000000000000009 /* ITermApplicationLocator.swift in Sources */, A1000000000000000000000A /* ITermLauncher.swift in Sources */, A1000000000000000000000B /* FinderLocationProvider.swift in Sources */, A1000000000000000000000C /* ServiceProvider.swift in Sources */, A1000000000000000000000D /* FinderScriptingBridge.m in Sources */); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000073 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000004 /* ITermLaunchContractTests.swift in Sources */); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A10000000000000000000091 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; MACOSX_DEPLOYMENT_TARGET = 26.0; SDKROOT = macosx; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_VERSION = 6.0; }; name = Debug; };
+		A10000000000000000000092 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; MACOSX_DEPLOYMENT_TARGET = 26.0; SDKROOT = macosx; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OPTIMIZATION_LEVEL = "-O"; SWIFT_VERSION = 6.0; }; name = Release; };
+		A10000000000000000000093 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { ARCHS = arm64; ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_ENTITLEMENTS = OpenITerm/Resources/OpenITerm.entitlements; CODE_SIGN_IDENTITY = "-"; CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO; CODE_SIGN_STYLE = Manual; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = ""; ENABLE_HARDENED_RUNTIME = YES; ENABLE_TESTABILITY = YES; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = OpenITerm/Resources/Info.plist; MACOSX_DEPLOYMENT_TARGET = 26.0; PRODUCT_BUNDLE_IDENTIFIER = com.peterldowns.OpeniTerm; PRODUCT_NAME = "Open iTerm"; SWIFT_OBJC_BRIDGING_HEADER = OpenITerm/Integrations/FinderScriptingBridge.h; SWIFT_VERSION = 6.0; }; name = Debug; };
+		A10000000000000000000094 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { ARCHS = arm64; ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_ENTITLEMENTS = OpenITerm/Resources/OpenITerm.entitlements; CODE_SIGN_IDENTITY = "-"; CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO; CODE_SIGN_STYLE = Manual; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = ""; ENABLE_HARDENED_RUNTIME = YES; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = OpenITerm/Resources/Info.plist; MACOSX_DEPLOYMENT_TARGET = 26.0; MARKETING_VERSION = 1.0.0; PRODUCT_BUNDLE_IDENTIFIER = com.peterldowns.OpeniTerm; PRODUCT_NAME = "Open iTerm"; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OBJC_BRIDGING_HEADER = OpenITerm/Integrations/FinderScriptingBridge.h; SWIFT_OPTIMIZATION_LEVEL = "-O"; SWIFT_VERSION = 6.0; }; name = Release; };
+		A10000000000000000000095 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { ARCHS = arm64; CODE_SIGNING_ALLOWED = NO; GENERATE_INFOPLIST_FILE = YES; MACOSX_DEPLOYMENT_TARGET = 26.0; PRODUCT_BUNDLE_IDENTIFIER = com.peterldowns.OpeniTermTests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 6.0; }; name = Debug; };
+		A10000000000000000000096 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { ARCHS = arm64; CODE_SIGNING_ALLOWED = NO; GENERATE_INFOPLIST_FILE = YES; MACOSX_DEPLOYMENT_TARGET = 26.0; PRODUCT_BUNDLE_IDENTIFIER = com.peterldowns.OpeniTermTests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 6.0; }; name = Release; };
+	/* End XCBuildConfiguration section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A100000000000000000000D0 /* XCLocalSwiftPackageReference "." */ = {isa = XCLocalSwiftPackageReference; relativePath = "."; };
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A100000000000000000000D1 /* OpenITermCore */ = {isa = XCSwiftPackageProductDependency; package = A100000000000000000000D0 /* XCLocalSwiftPackageReference "." */; productName = OpenITermCore; };
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCConfigurationList section */
+		A10000000000000000000061 /* Build configuration list for PBXNativeTarget "Open iTerm" */ = {isa = XCConfigurationList; buildConfigurations = (A10000000000000000000093 /* Debug */, A10000000000000000000094 /* Release */); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A10000000000000000000062 /* Build configuration list for PBXNativeTarget "OpenITermTests" */ = {isa = XCConfigurationList; buildConfigurations = (A10000000000000000000095 /* Debug */, A10000000000000000000096 /* Release */); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+		A10000000000000000000063 /* Build configuration list for PBXProject "OpenITerm" */ = {isa = XCConfigurationList; buildConfigurations = (A10000000000000000000091 /* Debug */, A10000000000000000000092 /* Release */); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = A10000000000000000000081 /* Project object */;
+}

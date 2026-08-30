@@ -1,65 +1,44 @@
 # iTerm2 Finder Tools
-New home for the code from [my blogpost about opening iTerm2 directly from the Finder](http://peterdowns.com/posts/open-iterm-finder-service.html). Read [the release post here](http://peterdowns.com/posts/iterm2-finder-tools.html).
 
-### What is it?
-A Finder service and toolbar application that will open iTerm2 and `cd` to the
-current directory visible in the Finder.
+A native Apple-silicon Finder toolbar app and Finder Service that opens the current Finder folder in the installed iTerm2 application. It passes the folder as a file URL through macOS `NSWorkspace`; it does not construct shell commands or use iTerm2's deprecated AppleScript API.
 
-### Features
-* Works regardless if iTerm2 is running or not – will start it if necessary.
-* Creates a new tab in the current open window for this directory.
-* Creates a new window if none are already open.
-* Yeah, this is pretty simple, isn't it?
+## Requirements
 
-### Version support
-This repository includes a pre-built Finder service and a pre-built
-application; these work with "modern" iTerm2 (version 2.9+). If you're using an
-older version of iTerm2, you'll have to run the build scripts to get a version
-that works for you. See the instructions below.
+- Apple-silicon Mac running macOS 26 or later
+- Xcode 26 or later, with its license accepted (`sudo xcodebuild -license accept`)
+- iTerm2 installed (identified by `com.googlecode.iterm2`)
 
-### Installation
-First, either download the repository with the big green button in the upper right or clone the repository like this:
+## Build and use
 
-```bash
-$ git clone https://github.com/peterldowns/iterm2-finder-tools.git
+```sh
+./scripts/build.sh --configuration release --signing ad-hoc
+./scripts/verify-artifact.sh 'build/Open iTerm.app'
 ```
 
-##### Finder Service
-Double click `Open iTerm.workflow` and click "Install"
+The usable app bundle is [build/Open iTerm.app](build/Open%20iTerm.app). It can remain there; an installer is not required.
 
-![service installation dialog](./screenshots/service_installer.png)
+1. Open a Finder folder and drag the app bundle onto Finder's toolbar while holding Command.
+2. Click it with a Finder folder active. macOS may ask to allow the app to control Finder.
+3. macOS or iTerm2 may separately ask for access when the folder is in a protected location such as Desktop, Documents, Downloads, or a removable volume.
 
-You can add a keyboard shortcut for this service by going to `System
-Preferences > Keyboard > Shortcuts > Services > Files and Folders`.
+The Finder Service is registered when the app bundle launches. In Finder, select exactly one folder, then use **Finder → Services → Open iTerm**. Enable it in **System Settings → Keyboard → Keyboard Shortcuts → Services** if it is not shown immediately.
 
-![keyboard shortcut](./screenshots/keyboard_shortcut.png)
+This is a personal-use, ad-hoc-signed build. macOS may require **Open Anyway** in Privacy & Security after its first launch.
 
-Unfortunately, it seems that this keyboard shortcut will only work if iTerm2 is
-already running.
+## Tests
 
-##### Finder Menu Tool
-You can move the built `Open iTerm.app` anywhere you'd like (such as `/Applications`), or leave it here.
+The app consumes the same `OpenITermCore` package exercised by the standalone test suite:
 
-After attempting to run the pre-built application for the first time, you may need to go into your System Preferences > Security & Privacy
-and enable running the app since it was built by an "unidentified developer".
-
-You can then add it to your Finder toolbar by dragging it in while holding the command and
-option keys (pre-Sierra) or while holding the command key (Sierra or later).
-
-![toolbar app install](./screenshots/application_install.gif)
-
-### Build
-Build the application and Finder service like this:
-
-```bash
-$ python build.py
+```sh
+./scripts/test.sh
 ```
 
-The build script will detect which version of iTerm2 you have installed and
-automatically use the right applescript -- `*.modern.applescript` for version
-2.9+, and `*.applescript` for older versions.
+The optional iTerm lifecycle spike runs only when `OPEN_ITERM_SPIKE_DIRECTORY` names an existing directory. Normal test runs do not open a new iTerm session.
 
-The build script should work with both Python 2 and Python 3.
+## Legacy artifacts
 
-### Hacking / Contributing
-Edit the `.applescript` files in the `service` and `workflow` directories, then build as described above. You can read the build script for the exact details, but essentially these files are being substituted in to some Automator-based scaffolding to get out the application and service. The `.modern.applescript` files should work with iTerm2 2.9+'s API, and the `.applescript` files should work with their older API.
+The root-level `Open iTerm.app`, `Open iTerm.workflow`, `application/`, `service/`, `build.py`, and AppleScript files are retained only as historical reference. They are not inputs to the Swift build. Use only the app produced in `build/`.
+
+## Current compatibility
+
+The current implementation is verified on Apple silicon, macOS 26.6, and iTerm2 3.6.11 for iTerm2's stopped, usable-window, and no-usable-window states. iTerm2 3.7 and macOS 27 remain unverified future compatibility checks.
