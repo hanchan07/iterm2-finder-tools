@@ -25,6 +25,24 @@ The Finder Service is registered when the app bundle launches. In Finder, select
 
 This is a personal-use, ad-hoc-signed build. macOS may require **Open Anyway** in Privacy & Security after its first launch.
 
+## Download the current build
+
+Download [Open iTerm for Apple silicon](releases/Open-iTerm-macos-arm64.zip) and its [SHA-256 checksum](releases/Open-iTerm-macos-arm64.zip.sha256), unzip it, and drag the resulting app bundle onto Finder's toolbar while holding Command. The app remains ad-hoc signed, so first-time users may need to choose **Open Anyway** in Privacy & Security.
+
+To verify the download from a local clone:
+
+```sh
+(cd releases && shasum -a 256 -c Open-iTerm-macos-arm64.zip.sha256)
+```
+
+To publish an updated app bundle after changing the source or its version, run:
+
+```sh
+./scripts/package-release.sh
+```
+
+This rebuilds and verifies the app, then updates `releases/Open-iTerm-macos-arm64.zip` and adds a versioned archive such as `releases/Open-iTerm-1.0.0-macos-arm64.zip`. Commit those archives with the source change so the repository's download always matches its code.
+
 ## Tests
 
 The app consumes the same `OpenITermCore` package exercised by the standalone test suite:
