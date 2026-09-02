@@ -41,7 +41,7 @@ To publish an updated app bundle after changing the source or its version, run:
 ./scripts/package-release.sh
 ```
 
-This rebuilds and verifies the app, then updates `releases/Open-iTerm-macos-arm64.zip` and adds a versioned archive such as `releases/Open-iTerm-1.0.0-macos-arm64.zip`. Commit those archives with the source change so the repository's download always matches its code.
+This rebuilds and verifies the app, then updates `releases/Open-iTerm-macos-arm64.zip`. When the version is newer than the current latest build, the packager first preserves that previous latest build as a versioned historical archive such as `releases/Open-iTerm-1.5.0-macos-arm64.zip`. Commit those archives with the source change so the repository's download always matches its code.
 
 ## Tests
 
